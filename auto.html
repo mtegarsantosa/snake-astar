@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Snake ASTAR Auto</title>
+</head>
+<style>
+  body {
+    text-align: center;
+    font-family: calibri;
+  }
+</style>
+<body>
+  <h2>arsan.dev Snake AI with A* Algorithm</h2>
+  <canvas></canvas>
+  <h1>Score: <span id="score">0</span> | Time: <span id="time">0</span>s</h1>
+  <p><b>Mode: <font color="red">Automatic (BOT)</font></b></p>
+  <button type="button" onclick="location.reload()">Refresh</button>
+  <button type="button" id="play">Play</button>
+  <button type="button" id="pause" hidden>Pause</button>
+  <script src="snake.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var snake = new Game({
+      size: 400,
+      blockSize: 15,
+      fps: 25,
+      utils: {
+        showGrid: true,
+        distance: true,
+        distanceCount: true,
+        distancePerpendicular: true
+      },
+      aStar: true
+    });
+    var playBtn = document.querySelector("#play");
+    var pauseBtn = document.querySelector("#pause");
+    playBtn.addEventListener("click", function(){
+      this.hidden = true;
+      pauseBtn.hidden = false;
+      snake.play();
+    });
+    pauseBtn.addEventListener("click", function(){
+      this.hidden = true;
+      playBtn.hidden = false;
+      snake.pause();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Snake ASTAR Manual</title>
+</head>
+<style>
+  body {
+    text-align: center;
+    font-family: calibri;
+  }
+</style>
+<body>
+  <h2>arsan.dev Snake Manual</h2>
+  <canvas></canvas>
+  <h1>Score: <span id="score">0</span> | Time: <span id="time">0</span>s</h1>
+  <button type="button" id="play">Play</button>
+  <p><b>Mode: <font color="red">Manual</font></b></p>
+  <script src="snake.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var snake = new Game({
+      size: 400,
+      blockSize: 25,
+      fps: 15,
+      // utils: {
+      //   showGrid: true,
+      //   distance: true,
+      //   distanceCount: true,
+      //   distancePerpendicular: true
+      // },
+      // aStar: true
+    });
+    snake.play();
+  </script>
+</body>
+
+</html>
